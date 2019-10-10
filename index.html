@@ -44,6 +44,10 @@
         <!-- Your content goes here -->
 
         <main>
+          <!-- <div class="prueba-jquery">Prueba de JQuery</div> -->
+
+          <img src="images/supermercado.jpg" alt="Supermercado Walmart" width="100%">
+
           <div class="mdl-textfield mdl-js-textfield">
             <input class="mdl-textfield__input" type="text" id="producto">
             <label class="mdl-textfield__label" for="producto">Ingrese un producto</label>
@@ -59,13 +63,46 @@
             Lista
           </button>
 
-          <ul id="lista" class="demo-list-item mdl-list"></ul>
+          <!-- <ul id="lista" class="demo-list-item mdl-list"></ul> -->
+          <div id="lista"></div>
         </main>
 
       </div>
     </main>
   </div>
+
+  <script id="listaTemplate" type="text/x-handlebars-template">
+    <ul class="demo-list-item mdl-list">
+      {{#listaDeCompras}}
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            {{producto}}
+          </span>
+        
+          <div class="mdl-textfield mdl-js-textfield">
+            <input 
+              class="mdl-textfield__input" 
+              value={{precio}}
+              onchange="cambiarPrecio(this, {{@index}})" 
+              type="text" 
+              id="sample{{@index}}">
+            <label class="mdl-textfield__label" for="sample{{@index}}"></label>
+          </div>
+        
+          <button 
+            onclick="borrar({{@index}})" 
+            class="boton-borrar mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+              Borrar
+          </button>
+        </li>
+      {{/listaDeCompras}}
+    </ul>
+  </script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="js/handlebars-v4.3.1.js"></script>
   <script src="js/main.js"></script>
+
 </body>
 
 </html>

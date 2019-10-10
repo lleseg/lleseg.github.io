@@ -9,6 +9,13 @@ main {
 .boton-borrar {
   font-size: 0.7em;
   padding: 0;
+  background-color: red;
+  color: white;
+}
+
+.boton-borrar:hover {
+  background-color: white;
+  color: red;
 }
 
 .mdl-textfield__input,
@@ -16,4 +23,8 @@ main {
   margin-left: 30px;
   margin-right: 30px;
   width: 80%;
+}
+
+img {
+  border-radius: 20px;
 }
